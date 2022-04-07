@@ -1,8 +1,11 @@
 package jdk;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.TreeSet;
+import abstarctTest.Son;
+
+import java.math.RoundingMode;
+import java.nio.charset.StandardCharsets;
+import java.text.DecimalFormat;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -11,13 +14,12 @@ import java.util.stream.Collectors;
  */
 public class javaApiTest {
     public static void main(String[] args) {
-        ArrayList<String> strings = new ArrayList<>();
-        strings.add("test");
-        strings.add("test");
-        strings.add("test1");
-        ArrayList<String> collect = strings.stream()
-                .collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(String::hashCode))), ArrayList::new));
+        String hour = "1";
+        //long minute = (long) (Long.parseLong(hour)*60);
 
-        System.out.println(collect);
+        System.out.println(Double.parseDouble(hour) * 60);
+        System.out.println(Math.ceil(Double.parseDouble(hour) * 60));
+        //System.out.println(minute);
+        //System.out.println(v);
     }
 }
